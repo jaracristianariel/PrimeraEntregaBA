@@ -27,7 +27,7 @@ class ProductManager {
             console.log("ocurrio un error al guardar")
         }
     }
-    addProduct(title, description, code, price, status = true, stock, category, thumbnails=[]){
+    addProduct({title, description, code, price, status = true, stock, category, thumbnails=[]}){
         if (!title || !description || !code || !price ||!stock || !category)
             return "todos los campos son requeridos";
         
