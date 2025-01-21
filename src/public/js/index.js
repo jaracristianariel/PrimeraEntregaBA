@@ -13,9 +13,14 @@ socket.on("productos", productos => {
                 <td>${producto.thumbnail}</td>
                 <td>${producto.code}</td>
                 <td>${producto.stock}</td>
+                <td>${producto.category}</td>
+                <button type="submit"> Eliminar </button>
                 `;
     })
 });
+
+
+//todavia estoy intentando hacer funcionar al boton de eliminar
 
 const formulario = document.getElementById("producto-form");
 
@@ -34,7 +39,7 @@ formulario.addEventListener("submit", function (event) {
         price: precio,
         code: codigo,
         stock: stock,
-        category: category
+        category: category,
     };
     socket.emit("agregarProducto", producto);
     formulario.reset();

@@ -48,7 +48,7 @@ class ProductManager {
         }
         this.products.push(nuevoProducto);
         this.createFile();
-        return "producto agregado"
+        return "producto agregado"    
     }
     getProducts(limit = 0){
         limit = Number(limit);

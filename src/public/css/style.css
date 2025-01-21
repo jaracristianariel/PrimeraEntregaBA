@@ -7,6 +7,7 @@ th, tr, td {
     border: 1px solid #f30707;
     padding: 8px;
     text-align: left;
+    color: #000000;
 }
 th {
     background-color: rgb(211, 150, 75);
