@@ -1,0 +1,136 @@
+<head>
+    <style>
+        body {
+    background-color: #8c8c8c;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #110e17;
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.logo {
+    font-size: 30px;
+    text-decoration: none;
+    color: aliceblue;
+    font-weight: bold;
+    transition: color 0.8s;
+}
+
+.logo:hover {
+    color: blue;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 20px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.8s, color 0.8s;
+}
+
+nav ul li a:hover {
+    background-color: #454448;
+    color: blue;
+}
+
+
+/* estilo de card*/
+.Card {
+    width: 300px;
+    background-color: khaki;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgb(243, 146, 28);
+    overflow: hidden;
+    margin: 20px;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Card h3 {
+    font-size: 22px;
+    margin-top: 15px;
+    color: #000000;
+    text-align: center;
+}
+
+.Card h4 {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #000000;
+    text-align: center;
+}
+
+.Card p {
+    font-size: 14px;
+    color: #000000;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.Card a {
+    text-decoration: none;
+    display: block;
+    background-color: #e5ff00;
+    color: rgb(5, 135, 249);
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: color 0.8;
+    text-align: center;
+}
+
+.Card button {
+    text-decoration: none;
+    display: block;
+    background-color: #e5ff00;
+    color: rgb(5, 135, 249);
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: color 0.8;
+    text-align: center;
+}
+
+.Card a:hover {
+    color: blue;
+}
+
+.Card button:hover {
+    color: blue;
+}
+    </style>
+</head>
+
+<div>
+    <div class="Cart">
+        <h2>carrito</h2>
+        {{#each carrito.products}}
+        <div>
+            <h4>Producto: {{this.id.title}}</h4>
+            <p>Descripcion: {{this.id.description}}</p>
+            <p>Precio: ${{this.id.price}}</p>
+            <p>Cantidad: {{this.quantity}}</p>
+        </div>
+        {{/each}}
+    </div>
+</div>

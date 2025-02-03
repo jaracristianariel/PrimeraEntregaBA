@@ -6,7 +6,7 @@ socket.on("productos", productos => {
     productos.forEach(producto => {
         const row = tbody.insertRow();
         row.innerHTML = `
-                <td>${producto.id}</td>
+                <td>${producto._id}</td>
                 <td>${producto.title}</td> 
                 <td>${producto.description}</td>
                 <td>${producto.price}</td>
@@ -14,13 +14,9 @@ socket.on("productos", productos => {
                 <td>${producto.code}</td>
                 <td>${producto.stock}</td>
                 <td>${producto.category}</td>
-                <button type="submit"> Eliminar </button>
                 `;
     })
 });
-
-
-//todavia estoy intentando hacer funcionar al boton de eliminar
 
 const formulario = document.getElementById("producto-form");
 

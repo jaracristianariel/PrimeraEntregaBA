@@ -1,0 +1,54 @@
+<div>
+    <h1>HOLA PROFE</h1>
+    <h2>al hacer click en el boton agregar carrito se va a agregar al carrito vacio que figura en el header</h2>
+
+    <h3>Productos</h3>
+
+<div>
+    {{#each result.payload}}
+    <div class="Card">
+        <h3>{{this.title}}</h3>
+        <h4>${{this.price}}</h4>
+        <p>{{this.description}}</p>
+        <div class="divbutton">
+        <button class="cart-btn" onclick="addToCart('{{this._id}}')">agregar al carrito</button>
+        </div>
+    </div>
+    {{/each}}
+</div>
+<div class="pagination">
+    <span>limite por pagina: {{result.limit}}</span><br>
+
+    {{#if result.query}}
+    <span>filtado por: {{result.query}}</span><br>
+    {{/if}}
+
+    {{#if result.hasPrevPage}}
+    <a href="?page={{result.prevPage}}&limit={{result.limit}}{{#if result.query}}&query={{result.query}}{{/if}}">anterior</a>
+    {{/if}}
+
+    <span>Pagina {{result.page}} de {{result.totalPages}}</span>
+    
+    {{#if result.hasNextPage}}
+    <a href="?page={{result.nextPage}}&limit={{result.limit}}{{#if result.query}}&query={{result.query}}{{/if}}">siguiente</a>
+    {{/if}}
+</div>
+<script>
+    function addToCart(pid){
+        const idCart = '67a1333008e4c6842dc06c6e'
+        fetch(`/api/carts/${idCart}/product/${pid}`, {
+            method: 'POST', 
+            headers:{
+                'Content-Type':'application/json',
+            },
+        })
+        .then(resp => resp.json())
+        .then(data => {
+            console.log(data)
+        })
+        .catch(error => {
+            console.log("error: ", error)
+        })
+    }
+</script>
+</div>
